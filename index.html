@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>YPS Kiosk</title>
+  <style>
+    html, body, iframe {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+<iframe src="https://sites.google.com/moe.edu.sg/yps-recep-kiosk/home"></iframe>
+
+<script>
+let idleTimer;
+
+function resetTimer() {
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(() => {
+    window.location.href = "https://YOUR-GITHUB-USERNAME.github.io/yps-kiosk/";
+  }, 15000); // 15 seconds
+}
+
+["mousemove", "mousedown", "touchstart", "keydown", "scroll"].forEach(event => {
+  document.addEventListener(event, resetTimer);
+});
+
+resetTimer();
+</script>
+
+</body>
+</html>
